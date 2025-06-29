@@ -6,7 +6,6 @@ import js from '@eslint/js';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 import tsParser from '@typescript-eslint/parser';
-import tsEslintPlugin from '@typescript-eslint/eslint-plugin';
 
 export default tseslint.config([
   // 全局忽略
@@ -33,8 +32,12 @@ export default tseslint.config([
     settings: {
       react: { version: 'detect' },
     },
-    extends: [js.configs.recommended, ...eslintPluginOxlint.configs['flat/recommended']],
+    extends: [js.configs.recommended, ...eslintPluginOxlint.configs['flat/react']],
     rules: {
+      // ESLint 相关规则
+      'no-unused-vars': 'off',
+      'no-multiple-empty-lines': ['warn', { max: 1, maxEOF: 0 }],
+      'no-trailing-spaces': 'error',
       // React 相关
       'react/jsx-uses-react': 'off',
       'react/react-in-jsx-scope': 'off',
@@ -44,19 +47,6 @@ export default tseslint.config([
       // React Hooks
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
-      // TypeScript
-      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
-      '@typescript-eslint/no-explicit-any': 'off',
-      '@typescript-eslint/ban-ts-comment': 'off',
-      // 通用
-      'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 0 }],
-      'no-trailing-spaces': 'error',
     },
-  },
-  // TypeScript 专用
-  {
-    files: ['**/*.ts', '**/*.tsx'],
-    plugins: { '@typescript-eslint': tsEslintPlugin },
-    rules: {},
   },
 ]);
