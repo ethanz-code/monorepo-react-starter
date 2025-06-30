@@ -16,6 +16,8 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@ethan-utils/zustand": "^1.0.0",
+    "@ethan-utils/axios": "^1.0.2",
     "isbot": "^5.1.27",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
@@ -26,13 +28,11 @@
     "@commitlint/config-conventional": "^19.8.1",
     "@commitlint/prompt-cli": "^19.8.1",
     "@eslint/js": "^9.30.0",
-    "@ethan-utils/axios": "^1.0.2",
     "@tailwindcss/vite": "^4.1.10",
     "@tsconfig/node22": "^22.0.1",
     "@types/node": "^22.14.0",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
-    "@typescript-eslint/eslint-plugin": "^8.35.0",
     "@typescript-eslint/parser": "^8.35.0",
     "@vitejs/plugin-react-swc": "^3.10.2",
     "code-inspector-plugin": "^0.20.12",
