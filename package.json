@@ -16,7 +16,7 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@ethan-utils/axios": "^2.0.1",
+    "@ethan-utils/axios": "^2.1.0",
     "@ethan-utils/zustand": "^1.0.0",
     "isbot": "^5.1.27",
     "lucide-react": "^0.525.0",

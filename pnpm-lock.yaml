@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@ethan-utils/axios':
-        specifier: ^2.0.1
-        version: 2.0.1
+        specifier: ^2.1.0
+        version: 2.1.0
       '@ethan-utils/zustand':
         specifier: ^1.0.0
         version: 1.0.0(@types/react@19.1.8)(immer@10.1.1)(react@19.1.0)
@@ -421,8 +421,8 @@ packages:
     resolution: {integrity: sha512-1+WqvgNMhmlAambTvT3KPtCl/Ibr68VldY2XY40SL1CE0ZXiakFR/cbTspaF5HsnpDMvcYYoJHfl4980NBjGag==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@ethan-utils/axios@2.0.1':
-    resolution: {integrity: sha512-8swQHK6ga24mwj+gE+wWS+DjmuKmLLJRgqRdsGPkCKglw6UPtjvHyZrryslBaybnPDIIuaJjDuMELegbDbeKzg==}
+  '@ethan-utils/axios@2.1.0':
+    resolution: {integrity: sha512-3tfv/1Zuk0ievvaoHRoK3jrDxELPMVa0NFNLmhnlipgofh890MHhUDYgf8mlqoqNaRQZICMQ7CKFtYAlGf74ag==}
     engines: {node: '>=18'}
 
   '@ethan-utils/zustand@1.0.0':
@@ -2951,7 +2951,7 @@ snapshots:
       '@eslint/core': 0.15.1
       levn: 0.4.1
 
-  '@ethan-utils/axios@2.0.1':
+  '@ethan-utils/axios@2.1.0':
     dependencies:
       axios: 1.10.0
       axios-retry: 4.5.0(axios@1.10.0)

@@ -1,13 +1,13 @@
 # monorepo-react-starter
 
-现代化 Monorepo 架构的 React 起始项目，基于 Vite、React 18、TypeScript，内置 TailwindCSS 原子化方案，采用 pnpm 作为包管理工具，适合中大型团队高效开发与协作。
+现代化 Monorepo 架构的 React 起始项目，基于 Vite、React 19、TypeScript，内置 TailwindCSS 4 原子化方案，采用 pnpm 作为包管理工具，适合中大型团队高效开发与协作。
 
 ## 项目亮点
 
 - **Monorepo 架构**：基于 pnpm workspace，支持多包统一管理，便于模块复用与团队协作。
-- **React 18 + Vite**：极速开发体验，支持最新函数组件与 Hooks。
+- **React 19 + Vite**：极速开发体验，支持最新函数组件与 Hooks。
 - **TypeScript 全量类型支持**：类型安全无忧。
-- **TailwindCSS 原子化 CSS**：极致灵活的样式方案，支持自定义扩展。
+- **TailwindCSS 4 原子化 CSS**：极致灵活的样式方案，支持自定义扩展。
 - **严格代码规范**：集成 ESLint、Prettier、Commitlint、Husky，保障团队代码质量。
 - **现代化开发体验**：支持 VSCode + TypeScript，类型推断与高亮无缝体验。
 
@@ -16,11 +16,12 @@
 ```text
 monorepo-react-starter/
 ├── packages/                # Monorepo 子包（可扩展自定义工具包）
-├── app/                     # 主应用源码
-│   ├── routes/              # 路由页面组件
-│   ├── welcome/             # 欢迎页及相关组件
-│   ├── app.css              # 全局样式（已引入 TailwindCSS）
-│   └── root.tsx             # 应用入口
+├── src/                     # 主应用源码
+│   ├── views/               # 页面组件
+│   ├── router/              # 路由配置
+│   ├── assets/              # 静态资源和全局样式
+│   ├── App.tsx              # 应用根组件
+│   └── main.tsx             # 应用入口
 ├── public/                  # 公共资源
 ├── package.json             # 根包配置，依赖与脚本
 ├── pnpm-workspace.yaml      # Monorepo 配置
@@ -41,11 +42,25 @@ monorepo-react-starter/
 pnpm install
 ```
 
+### 启动开发服务器
+
+```sh
+pnpm dev           # 启动开发服务器
+```
+
+### 构建项目
+
+```sh
+pnpm build         # 构建生产版本
+pnpm preview       # 预览生产构建
+```
+
 ### 代码检查与格式化
 
 ```sh
-pnpm run lint      # 代码规范检查
-pnpm run format    # 代码格式化
+pnpm lint          # 代码规范检查（oxlint + eslint）
+pnpm format        # 代码格式化
+pnpm commit        # 交互式提交
 ```
 
 ## 推荐开发工具
@@ -54,24 +69,38 @@ pnpm run format    # 代码格式化
 
 ## 依赖说明
 
-本项目主要依赖如下（部分）：
+本项目主要依赖如下：
 
-- `react`
-- `react-dom`
-- `react-router`
-- `isbot`
-- `vite`
-- `@vitejs/plugin-react-swc`
-- `tailwindcss`
-- `eslint`
-- `prettier`
-- `husky`
-- `typescript`
-- `lint-staged`
-- `commitlint`
-- `onchange`
-- `oxlint`
-- 以及更多详细依赖请见 package.json 文件
+**核心框架**
+
+- `react@19` - React 核心库
+- `react-dom@19` - React DOM 渲染
+- `react-router@7` - 路由管理
+
+**构建工具**
+
+- `vite` - 构建工具
+- `@vitejs/plugin-react-swc` - React SWC 插件
+- `typescript` - TypeScript 支持
+
+**样式方案**
+
+- `tailwindcss@4` - 原子化 CSS 框架
+- `@tailwindcss/vite` - TailwindCSS Vite 插件
+
+**状态管理**
+
+- `@ethan-utils/zustand` - Zustand 状态管理
+- `@ethan-utils/axios` - Axios HTTP 客户端
+
+**代码质量**
+
+- `eslint` + `oxlint` - 代码检查
+- `prettier` - 代码格式化
+- `husky` + `lint-staged` - Git 钩子
+- `commitlint` - 提交信息规范
+
+详细依赖列表请查看 package.json 文件
 
 ## 代码规范与提交
 
